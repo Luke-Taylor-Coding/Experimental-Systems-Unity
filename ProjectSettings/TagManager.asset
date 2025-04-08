@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - Ammo
+  - Ball
+  - Pin
   layers:
   - Default
   - TransparentFX
