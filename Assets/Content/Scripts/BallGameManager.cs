@@ -45,6 +45,14 @@ public class BallGameManager : MonoBehaviour
         foreach (var pin in m_pins) 
         {
             pin.gameObject.SetActive(true);
+
+            //reset positions 
+            pin.GetComponent<HoldPositionAndRotation>().ResetPositionAndRotation();
+
+            //if (pin.GetComponent<Rigidbody>() == null)
+            //{
+            //    pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            //}
         }
 
         //start coroutine for game time 

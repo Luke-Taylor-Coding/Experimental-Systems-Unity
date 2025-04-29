@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 8763369778203145785}
   - component: {fileID: 1275266780047409577}
   - component: {fileID: 3346110988464139581}
+  - component: {fileID: 5334872535247948528}
   m_Layer: 0
   m_Name: Pin
   m_TagString: Pin
@@ -246,6 +247,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5334872535247948528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689661231399094348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aba025a4aa8ca4fb3aaf410ef2450c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7018147710600810647
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3663873139764498589}
+  - component: {fileID: 3960539757523511612}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -388,3 +402,15 @@ Transform:
   - {fileID: 580156199589495603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3960539757523511612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502319449457871569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aba025a4aa8ca4fb3aaf410ef2450c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
