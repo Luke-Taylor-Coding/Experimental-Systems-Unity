@@ -17,6 +17,12 @@ public class BallGameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //check for score manager
+        if (m_scoreManager == null)
+        {
+            Debug.LogError("Score manager not attached to Ball Game Manager!");
+        }
+
         //set inactive by defualt
         SetGameInactive();
     }
@@ -52,7 +58,14 @@ public class BallGameManager : MonoBehaviour
         m_gameActive = false;
 
         //stop coroutine if game stopped from other meathods 
-        StopCoroutine(m_gameTimeCoroutine);
+        try
+        {
+            StopCoroutine(m_gameTimeCoroutine);
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Coroutine for game time already stopped");
+        }
 
         //stop score manager
         m_scoreManager.SetActive(false);
