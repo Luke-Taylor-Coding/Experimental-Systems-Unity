@@ -48,11 +48,6 @@ public class BallGameManager : MonoBehaviour
 
             //reset positions 
             pin.GetComponent<HoldPositionAndRotation>().ResetPositionAndRotation();
-
-            //if (pin.GetComponent<Rigidbody>() == null)
-            //{
-            //    pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-            //}
         }
 
         //start coroutine for game time 
@@ -81,6 +76,13 @@ public class BallGameManager : MonoBehaviour
         //de-activate and hide pins
         foreach (var pin in m_pins)
         {
+            //stop velocity
+            if (pin.GetComponent<Rigidbody>() != null)
+            {
+                pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            }
+
             pin.gameObject.SetActive(false);
         }
     }
