@@ -27,12 +27,6 @@ public class BallGameManager : MonoBehaviour
         SetGameInactive();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetGameActive()
     {
         m_gameActive = true;
@@ -53,7 +47,6 @@ public class BallGameManager : MonoBehaviour
         //start coroutine for game time 
         m_gameTimeCoroutine = GameTimeCounter(m_gameTime);
         StartCoroutine(m_gameTimeCoroutine);
-
     }
 
     public void SetGameInactive()
@@ -77,10 +70,11 @@ public class BallGameManager : MonoBehaviour
         foreach (var pin in m_pins)
         {
             //stop velocity
-            if (pin.GetComponent<Rigidbody>() != null)
+            Rigidbody rb = pin.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-                pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
             }
 
             pin.gameObject.SetActive(false);
