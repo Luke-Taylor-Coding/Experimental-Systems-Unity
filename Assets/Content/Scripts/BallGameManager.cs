@@ -29,6 +29,12 @@ public class BallGameManager : MonoBehaviour
 
     public void SetGameActive()
     {
+        //if game is currently running do nothing
+        if (m_gameActive)
+        {
+            return;
+        }
+
         m_gameActive = true;
 
         //set score manager to running, set score to 0
