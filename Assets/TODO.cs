@@ -6,6 +6,7 @@
 // game loop (after time, go again if score reached)
 // add proper lighting 
 // tweak ball physics 
+// Affordance!!!
 // add textures
 // add tutorials
 // add atmosphere 
