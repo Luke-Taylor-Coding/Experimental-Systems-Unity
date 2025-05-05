@@ -2,7 +2,6 @@
 
 // BALL GAME
 // make pin layout better
-// add hard mode scoring func to game manager
 // game loop (after time, go again if score reached)
 // add proper lighting 
 // tweak ball physics 
