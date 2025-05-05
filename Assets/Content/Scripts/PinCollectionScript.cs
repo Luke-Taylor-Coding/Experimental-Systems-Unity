@@ -3,7 +3,6 @@ using UnityEngine;
 public class PinCollectionScript : MonoBehaviour
 {
     public ScoreManager m_scoreManager;
-    public float m_ScorePerPin = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +17,8 @@ public class PinCollectionScript : MonoBehaviour
         if (other.gameObject.CompareTag("Pin"))
         {
             other.gameObject.SetActive(false);
-            m_scoreManager.AddScore(m_ScorePerPin);
+
+            m_scoreManager.PinScored();
         }
         else if (other.gameObject.CompareTag("Ball"))
         {

@@ -6,6 +6,7 @@ public class BallGameManager : MonoBehaviour
     //Manager class for the ball game
 
     private bool m_gameActive = false;
+    private bool m_hardModeActive = false;
     public ScoreManager m_scoreManager;
 
     //list of all pins and stands they are on for activating 
@@ -92,5 +93,11 @@ public class BallGameManager : MonoBehaviour
         //waits for the game to end 
         yield return new WaitForSeconds(time);
         SetGameInactive();
+    }
+
+    public void ToggleHardmode(bool TorF)
+    {
+        m_hardModeActive = TorF;
+        m_scoreManager.ToggleHardMode(TorF);
     }
 }

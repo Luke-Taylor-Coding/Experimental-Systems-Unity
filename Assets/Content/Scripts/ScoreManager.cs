@@ -6,6 +6,9 @@ public class ScoreManager : MonoBehaviour
 {
     private bool m_isActive = false;
     private float m_score = 0;
+    public float m_ScorePerPin = 100;
+    public float m_ScorePerPinHard = 200;
+    public bool m_hardModeEnabled = false;
     public TextMeshProUGUI[] m_scoreUIs = null;
 
     public void ScoreUpdated()
@@ -15,8 +18,20 @@ public class ScoreManager : MonoBehaviour
             UI.text = m_score.ToString();
         }
     }
+    public void PinScored()
+    {
+        if (m_hardModeEnabled)
+        {
+            AddScore(m_ScorePerPinHard);
+        }
+        else
+        {
+            AddScore(m_ScorePerPin);
+        }
+    }
 
     #region Score Manipulation
+
     public void AddScore(float Score)
     {
         if (m_isActive)
@@ -50,4 +65,8 @@ public class ScoreManager : MonoBehaviour
         m_isActive = Active;
     }
 
+    public void ToggleHardMode(bool TorF)
+    {
+        m_hardModeEnabled = TorF;
+    }
 }
