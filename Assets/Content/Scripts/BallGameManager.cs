@@ -70,6 +70,8 @@ public class BallGameManager : MonoBehaviour
             Debug.Log("Coroutine for game time already stopped");
         }
 
+        //check for high score
+        m_scoreManager.CheckForNewHighScore();
         //stop score manager
         m_scoreManager.SetActive(false);
 

@@ -5,19 +5,19 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     private bool m_isActive = false;
+
     private float m_score = 0;
+    private float m_highScore = 0;
+
     public float m_ScorePerPin = 100;
     public float m_ScorePerPinHard = 200;
-    public bool m_hardModeEnabled = false;
-    public TextMeshProUGUI[] m_scoreUIs = null;
 
-    public void ScoreUpdated()
-    {
-        foreach (var UI in m_scoreUIs)
-        {
-            UI.text = m_score.ToString();
-        }
-    }
+    public bool m_hardModeEnabled = false;
+
+    public TextMeshProUGUI m_scoreUI = null;
+    public TextMeshProUGUI m_highScoreUI = null;
+
+
     public void PinScored()
     {
         if (m_hardModeEnabled)
@@ -28,10 +28,13 @@ public class ScoreManager : MonoBehaviour
         {
             AddScore(m_ScorePerPin);
         }
-    }
+    } //for when a pin is knocked over and scored 
 
     #region Score Manipulation
-
+    public void ScoreUpdated()
+    {
+        m_scoreUI.text = m_score.ToString();
+    }
     public void AddScore(float Score)
     {
         if (m_isActive)
@@ -42,7 +45,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void MinusScore(float Score)
     {
-        if (m_isActive) 
+        if (m_isActive)
         {
             m_score -= Score;
             ScoreUpdated();
@@ -53,12 +56,27 @@ public class ScoreManager : MonoBehaviour
         m_score = Score;
         ScoreUpdated();
     }
-    #endregion
-
     public float GetScore()
     {
         return m_score;
     }
+
+    #endregion
+
+    #region High Score Manipulation
+    private void HighScoreUpdate()
+    {
+        m_highScoreUI.text = "Highscore: " + m_scoreUI.ToString();
+    }
+    public void CheckForNewHighScore()
+    {
+        if (m_score > m_highScore)
+        {
+            m_highScore = m_score;
+            HighScoreUpdate();
+        }
+    }
+    #endregion
 
     public void SetActive(bool Active)
     {

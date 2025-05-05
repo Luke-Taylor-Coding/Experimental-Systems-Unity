@@ -1,8 +1,12 @@
 // TODO LIST
 
+// TEST TELEPORT AREA
+
+
 // BALL GAME
 // make pin layout better
 // game loop (after time, go again if score reached)
+// highscore?
 // add proper lighting 
 // tweak ball physics 
 // Affordance!!!
