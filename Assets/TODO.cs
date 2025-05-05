@@ -19,7 +19,10 @@
 
 // MAIN MENU
 // add main menu scene 
-//
+// unique interaction for selecting game mode 
+// balloon pop maybe?
+// wheel spinning?
+// shooting targets
 
 
 // GENERAL 
