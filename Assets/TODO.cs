@@ -1,7 +1,10 @@
 // TODO LIST
 
-// TEST TELEPORT AREA
-
+// Current Issues
+// stand movement in hardmode 
+// high score UI text wont display
+// lighting behind player issues
+// player can enter the stand
 
 // BALL GAME
 // make pin layout better
