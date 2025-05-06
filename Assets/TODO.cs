@@ -1,8 +1,6 @@
 // TODO LIST
 
 // Current Issues
-// stand movement in hardmode 
-// high score UI text wont display
 // lighting behind player issues
 // player can enter the stand
 
@@ -10,6 +8,7 @@
 // make pin layout better
 // game loop (after time, go again if score reached)
 // add proper lighting 
+// countdown timer? / game start and ended text
 // tweak ball physics 
 // Affordance!!!
 // add textures

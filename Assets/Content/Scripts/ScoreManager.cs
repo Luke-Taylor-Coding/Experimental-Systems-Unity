@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
     #region High Score Manipulation
     private void HighScoreUpdate()
     {
-        m_highScoreUI.text = "Highscore: " + m_scoreUI.ToString();
+        m_highScoreUI.text = "Highscore: " + m_highScore.ToString();
     }
     public void CheckForNewHighScore()
     {
