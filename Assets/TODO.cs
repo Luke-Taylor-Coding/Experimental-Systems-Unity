@@ -6,7 +6,7 @@
 
 // BALL GAME
 // make pin layout better
-// Add anchor points
+// Add anchor points           NEED TESTING
 // game loop (after time, go again if score reached)
 // add proper lighting 
 // countdown timer? / game start and ended text
