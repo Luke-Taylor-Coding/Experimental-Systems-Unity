@@ -8,6 +8,7 @@ public class BallGameManager : MonoBehaviour
     private bool m_gameActive = false;
     private bool m_hardModeActive = false;
     public ScoreManager m_scoreManager;
+    public GameUIManager m_gameUIManager;
 
     //list of all pins and stands they are on for activating 
     public GameObject[] m_pins;
@@ -26,6 +27,9 @@ public class BallGameManager : MonoBehaviour
 
         //set inactive by defualt
         SetGameInactive();
+
+        //set starting text
+        m_gameUIManager.StartingText();
     }
 
     public void SetGameActive()
@@ -37,6 +41,9 @@ public class BallGameManager : MonoBehaviour
         }
 
         m_gameActive = true;
+
+        //set game text 
+        m_gameUIManager.GameStart();
 
         //set score manager to running, set score to 0
         m_scoreManager.SetActive(true);
@@ -69,6 +76,9 @@ public class BallGameManager : MonoBehaviour
         {
             Debug.Log("Coroutine for game time already stopped");
         }
+
+        //set game text 
+        m_gameUIManager.GameEnd();
 
         //check for high score
         m_scoreManager.CheckForNewHighScore();
