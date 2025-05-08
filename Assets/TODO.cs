@@ -2,10 +2,7 @@
 
 // Current Issues
 // lighting behind player issues
-// stand window issues
-// game button cant be pressed down
 // anchor issues 
-// 
 
 // BALL GAME
 // make pin layout better
@@ -30,6 +27,8 @@
 // balloon pop maybe?
 // wheel spinning?
 // shooting targets
+// area to teleport back up to center if goes in water
+// UI tutorials
 
 
 // GENERAL 
