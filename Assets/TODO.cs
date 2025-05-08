@@ -2,19 +2,15 @@
 
 // Current Issues
 // lighting behind player issues
-// anchor issues 
 
 // BALL GAME
-// make pin layout better
-// Add anchor points           NEED TESTING
 // game loop (after time, go again if score reached)
 // add proper lighting 
-// tweak ball physics 
 // Affordance!!!
 // add textures
 // add tutorials
 // add sounds and visual effects 
-
+// ball despawn
 
 // WATER BLASTING 
 
