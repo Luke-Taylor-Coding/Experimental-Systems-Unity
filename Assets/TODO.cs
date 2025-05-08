@@ -2,6 +2,7 @@
 
 // Current Issues
 // lighting behind player issues
+// buttons not activating on manual push
 
 // BALL GAME
 // game loop (after time, go again if score reached)
@@ -15,7 +16,12 @@
 // WATER BLASTING 
 
 
-// RING TOSS?
+// balloon pop
+// player has gun 
+// balloons move towards them
+// movement disabled?
+// shoot balloons to earn score
+// game over when balloon hits player
 
 // MAIN MENU
 // add main menu scene 
