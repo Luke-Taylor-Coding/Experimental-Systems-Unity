@@ -107,6 +107,18 @@ public class BallGameManager : MonoBehaviour
         SetGameInactive();
     }
 
+    public void RespawnPins()
+    {
+        //show and activate pins
+        foreach (var pin in m_pins)
+        {
+            pin.gameObject.SetActive(true);
+
+            //reset positions 
+            pin.GetComponent<HoldPositionAndRotation>().ResetPositionAndRotation();
+        }
+    }
+
     public void ToggleHardmode(bool TorF)
     {
         m_hardModeActive = TorF;
