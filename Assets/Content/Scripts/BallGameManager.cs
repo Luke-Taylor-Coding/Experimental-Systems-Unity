@@ -9,6 +9,7 @@ public class BallGameManager : MonoBehaviour
     private bool m_hardModeActive = false;
     public ScoreManager m_scoreManager;
     public GameUIManager m_gameUIManager;
+    public PinCollectionScript m_pinCollectionScript;
 
     //list of all pins and stands they are on for activating 
     public GameObject[] m_pins;
@@ -98,6 +99,9 @@ public class BallGameManager : MonoBehaviour
 
             pin.gameObject.SetActive(false);
         }
+
+        //call to the collector to reset the pins hit
+        m_pinCollectionScript.SetCurrentPinsHit(0);
     }
 
     IEnumerator GameTimeCounter(float time)
@@ -113,6 +117,14 @@ public class BallGameManager : MonoBehaviour
         foreach (var pin in m_pins)
         {
             pin.gameObject.SetActive(true);
+
+            //stop velocity
+            Rigidbody rb = pin.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
 
             //reset positions 
             pin.GetComponent<HoldPositionAndRotation>().ResetPositionAndRotation();

@@ -42,4 +42,9 @@ public class PinCollectionScript : MonoBehaviour
             m_currentPinsHit = 0;
         }
     }
+
+    public void SetCurrentPinsHit(int pinsHit)
+    {
+        m_currentPinsHit = pinsHit;
+    }
 }
