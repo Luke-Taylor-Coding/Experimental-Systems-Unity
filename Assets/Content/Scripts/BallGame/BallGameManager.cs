@@ -15,7 +15,7 @@ public class BallGameManager : MonoBehaviour
     public GameObject[] m_pins;
 
     public float m_gameTime = 0;
-    private Coroutine m_gameTimeCoroutine;
+    private IEnumerator m_gameTimeCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

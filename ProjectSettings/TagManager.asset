@@ -8,6 +8,7 @@ TagManager:
   - Ammo
   - Ball
   - Pin
+  - Bullet
   layers:
   - Default
   - TransparentFX

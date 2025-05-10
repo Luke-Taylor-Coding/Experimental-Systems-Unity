@@ -15,7 +15,7 @@ public class BalloonSpawner : MonoBehaviour
 
     [SerializeField] float m_spawnTime = 7.5f; //seconds
 
-    private bool m_isActive = false;
+    private bool m_isActive = true;
     private Coroutine m_balloonCooldown;
 
     private void FixedUpdate()
@@ -36,7 +36,7 @@ public class BalloonSpawner : MonoBehaviour
         foreach (var item in m_BallonPool)
         {
             //find in-active
-            if (item.active)
+            if (item.activeSelf)
             {
                 continue;
             }
@@ -55,6 +55,10 @@ public class BalloonSpawner : MonoBehaviour
     {
         // starts a cooldown
         yield return new WaitForSeconds(m_spawnTime);
+
+        //reset cooldown
+        m_balloonCooldown = null;
+
         //spawns a balloon
         SpawnBalloon();
     }
