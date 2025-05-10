@@ -21,7 +21,7 @@
 // when balloon hit, call to life manager and get back a bool if lives = 0 or not
 // Resets all systems when game over 
 
-//life manager 
+// LIFE MANAGER    
 // holds lives, when lives over call back to game manager game over
 // displays lives on UI / updates it 
 
