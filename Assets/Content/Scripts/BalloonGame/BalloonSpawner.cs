@@ -73,6 +73,12 @@ public class BalloonSpawner : MonoBehaviour
         }
         else 
         {
+            //ensure all balloons are deactivated
+            foreach (var item in m_BallonPool)
+            {
+                item.SetActive(false);
+            }
+
             m_isActive = false;
         }
     }
