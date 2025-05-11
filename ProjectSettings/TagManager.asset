@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - Pin
   - Bullet
+  - Gun
   layers:
   - Default
   - TransparentFX
