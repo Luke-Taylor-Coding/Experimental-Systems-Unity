@@ -13,9 +13,10 @@ public class BalloonSpawner : MonoBehaviour
     public GameObject[] m_BallonPool;
     public Transform[] m_spawnPoints;
 
-    [SerializeField] float m_spawnTime = 7.5f; //seconds
+    [SerializeField] private float m_spawnTime = 7.5f; //seconds
+    [SerializeField] private BalloonGameManager m_balloonGameManager;
 
-    private bool m_isActive = true;
+    private bool m_isActive = false;
     private Coroutine m_balloonCooldown;
 
     private void FixedUpdate()
@@ -65,7 +66,10 @@ public class BalloonSpawner : MonoBehaviour
     public void SetActive(bool TorF)
     {
         //force stop coroutine
-        StopCoroutine(m_balloonCooldown);
+        if (m_balloonCooldown != null)
+        {
+            StopCoroutine(m_balloonCooldown);
+        }
 
         if (TorF)
         {
@@ -81,5 +85,13 @@ public class BalloonSpawner : MonoBehaviour
 
             m_isActive = false;
         }
+    }
+    public void BalloonReachedTarget()
+    {
+        m_balloonGameManager.TakeLife();
+    }
+    public void BalloonHit()
+    {
+        m_balloonGameManager.AddScore();
     }
 }

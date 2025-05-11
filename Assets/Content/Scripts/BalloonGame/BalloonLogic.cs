@@ -9,14 +9,15 @@ public class BalloonLogic : MonoBehaviour
 {
     [SerializeField] private Transform m_target;
     [SerializeField] private float m_speed = 1f;
+    [SerializeField] private BalloonSpawner m_balloonSpawner;
 
     void Update()
     {
         //check if target is reached
         if (gameObject.transform.position == m_target.transform.position)
         {
-            //if so call to game manager to take a life
-
+            //if so call to balloon manager to take a life
+            m_balloonSpawner.BalloonReachedTarget();
 
             //de-activate
             SetActive(false);
@@ -33,6 +34,8 @@ public class BalloonLogic : MonoBehaviour
         //if projectile
         if (other.CompareTag("Bullet"))
         {
+            //call that balloon has been hit
+            m_balloonSpawner.BalloonHit();
             SetActive(false);
         }
     }
