@@ -47,7 +47,7 @@ public class BalloonGameManager : MonoBehaviour
 
         m_gameActive = false;
         //call to life manager to reset lives
-        m_healthManager.ResetLives();
+        m_healthManager.GameEnded();
 
         //call to score manager to reset score
         m_balloonScoreManager.SetScore(0);
@@ -55,8 +55,6 @@ public class BalloonGameManager : MonoBehaviour
 
         //call to balloon spawner to stop
         m_balloonSpawner.SetActive(false);
-
-        //call to game UI manager to reset UI
 
         //reset game time
         m_gameTime = 0f;
@@ -74,7 +72,8 @@ public class BalloonGameManager : MonoBehaviour
         //call to balloon spawner to start spawning
         m_balloonSpawner.SetActive(true);
 
-        //call to game UI manager to set game active
+        //call life manager
+        m_healthManager.GameStarted();
 
         //call to score manager to set game active
         m_balloonScoreManager.SetActive(true);
