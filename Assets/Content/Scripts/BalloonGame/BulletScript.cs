@@ -40,4 +40,15 @@ public class BulletScript : MonoBehaviour
         m_rb.linearVelocity = Vector3.zero;
         m_rb.angularVelocity = Vector3.zero;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Balloon"))
+        {
+            gameObject.SetActive(false);
+            gameObject.transform.position = Vector3.zero;
+            m_rb.linearVelocity = Vector3.zero;
+            m_rb.angularVelocity = Vector3.zero;
+        }
+    }
 }

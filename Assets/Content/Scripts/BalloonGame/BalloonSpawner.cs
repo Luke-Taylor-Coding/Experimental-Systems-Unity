@@ -94,4 +94,19 @@ public class BalloonSpawner : MonoBehaviour
     {
         m_balloonGameManager.AddScore();
     }
+
+    public void AddSpawnTime(float time)
+    {
+        m_spawnTime += time;
+    }
+    public void SubtractSpawnTime(float time)
+    {
+        m_spawnTime -= time;
+
+        //hard cap 
+        if (m_spawnTime < 0.5)
+        {
+            m_spawnTime = 0.5f;
+        }
+    }
 }

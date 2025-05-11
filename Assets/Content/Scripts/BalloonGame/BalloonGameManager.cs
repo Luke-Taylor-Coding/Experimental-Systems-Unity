@@ -9,6 +9,8 @@ public class BalloonGameManager : MonoBehaviour
 {
     private bool m_gameActive = false;
     private float m_gameTime = 0;
+    public float m_intervalsBetweenDifficulty = 30f; //seconds
+    public float m_spawnTimeDecrease = 0.75f; //seconds
 
     [SerializeField] BalloonSpawner m_balloonSpawner;
     [SerializeField] HealthManager m_healthManager;
@@ -20,6 +22,12 @@ public class BalloonGameManager : MonoBehaviour
         {
             //count game time
             m_gameTime += Time.deltaTime;
+
+            if (m_gameTime >= m_intervalsBetweenDifficulty)
+            {
+                m_gameTime = 0f;
+                m_balloonSpawner.SubtractSpawnTime(m_spawnTimeDecrease);
+            }
         }
     }
 
@@ -50,7 +58,6 @@ public class BalloonGameManager : MonoBehaviour
         m_healthManager.GameEnded();
 
         //call to score manager to reset score
-        m_balloonScoreManager.SetScore(0);
         m_balloonScoreManager.SetActive(false);
 
         //call to balloon spawner to stop
@@ -77,5 +84,6 @@ public class BalloonGameManager : MonoBehaviour
 
         //call to score manager to set game active
         m_balloonScoreManager.SetActive(true);
+        m_balloonScoreManager.SetScore(0);
     }
 }

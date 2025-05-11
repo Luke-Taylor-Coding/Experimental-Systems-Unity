@@ -10,6 +10,7 @@ TagManager:
   - Pin
   - Bullet
   - Gun
+  - Balloon
   layers:
   - Default
   - TransparentFX

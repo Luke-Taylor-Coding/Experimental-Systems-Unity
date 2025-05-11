@@ -81,11 +81,11 @@ public class GunManager : MonoBehaviour
             }
             else
             {
-                //set its position to be the fire point
+                //set its position to be the fire point  
                 bullet.transform.position = m_firePoint.position;
-                //set its rotation to be the fire point
-                bullet.transform.rotation = m_firePoint.rotation;
-                //fire it
+                //set its rotation with -90 degrees on the Y-axis  
+                bullet.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y - 90, gameObject.transform.rotation.eulerAngles.z);
+                //fire it  
                 bullet.SetActive(true);
                 bullet.GetComponent<BulletScript>().Fire(m_firePoint.forward);
                 return;
