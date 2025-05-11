@@ -2998,7 +2998,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d77789e9b07f264b8277a9350532266, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 885578815}
+      addedObject: {fileID: 885578818}
   m_SourcePrefab: {fileID: 100100000, guid: 3d77789e9b07f264b8277a9350532266, type: 3}
 --- !u!4 &885578813 stripped
 Transform:
@@ -3010,7 +3010,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d77789e9b07f264b8277a9350532266, type: 3}
   m_PrefabInstance: {fileID: 885578812}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &885578815
+--- !u!64 &885578818
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3031,7 +3031,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 5633341027703713538, guid: db38ed9ca27c3754d8727f756c56e39c, type: 3}
+  m_Mesh: {fileID: 5195004627940933925, guid: 3d77789e9b07f264b8277a9350532266, type: 3}
 --- !u!1 &890568378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,17 +3059,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890568378}
-  m_LocalRotation: {x: -0, y: 0.9140048, z: -0, w: 0.4057033}
-  m_LocalPosition: {x: 0, y: 0, z: -116.87}
+  m_LocalRotation: {x: -0, y: 0.9557747, z: -0, w: 0.29409984}
+  m_LocalPosition: {x: 0, y: 0, z: -116.456}
   m_LocalScale: {x: 0.008999999, y: 0.009, z: 0.008999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1763894695}
   m_Father: {fileID: 1768504225}
-  m_LocalEulerAnglesHint: {x: 0, y: 132.13, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 145.793, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.86, y: 48.312}
+  m_AnchoredPosition: {x: 28.215, y: 48.312}
   m_SizeDelta: {x: 340, y: 448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890568380
@@ -5260,7 +5260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press grab trigger to interact
+  m_text: Press grab and hold trigger to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 29ebe5d015a8a5648998440ad3399ca7, type: 2}
   m_sharedMaterial: {fileID: -6558167444847977169, guid: 29ebe5d015a8a5648998440ad3399ca7, type: 2}
@@ -7528,7 +7528,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
