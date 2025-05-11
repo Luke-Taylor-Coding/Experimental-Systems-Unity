@@ -10,11 +10,11 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
+        gameObject.SetActive(false);
     }
 
     public void Fire(Vector3 direction)
     {
-        gameObject.SetActive(true);
         m_lifetimeRemaining = m_lifetime;
 
         m_rb.linearVelocity = direction * m_speed;

@@ -63,14 +63,14 @@ public class GunManager : MonoBehaviour
             {
                 if (m_triggerActionR.action.ReadValue<float>() > 0.9f || m_triggerActionL.action.ReadValue<float>() > 0.9f)
                 {
-                    Fire();
+                    FireBullet();
                     m_timer = 0f;
                 }
             }
         }
     }
 
-    private void Fire()
+    private void FireBullet()
     {
         //grab an inactive bullet from the pool
         foreach (var bullet in m_bulletPool)
@@ -79,13 +79,17 @@ public class GunManager : MonoBehaviour
             {
                 continue;
             }
-
-            //set its position to be the fire point
-            bullet.transform.position = m_firePoint.position;
-            //set its rotation to be the fire point
-            bullet.transform.rotation = m_firePoint.rotation;
-            //fire it
-            bullet.GetComponent<BulletScript>().Fire(m_firePoint.forward);
+            else
+            {
+                //set its position to be the fire point
+                bullet.transform.position = m_firePoint.position;
+                //set its rotation to be the fire point
+                bullet.transform.rotation = m_firePoint.rotation;
+                //fire it
+                bullet.SetActive(true);
+                bullet.GetComponent<BulletScript>().Fire(m_firePoint.forward);
+                return;
+            }
         }
 
         //haptic feedback?
